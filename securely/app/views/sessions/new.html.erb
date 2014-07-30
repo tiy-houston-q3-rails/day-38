@@ -1,0 +1,20 @@
+
+
+<%= form_tag verify_path do %>
+  <fieldset>
+    <label>Sign In!</label>
+  </fieldset>
+  <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, "", class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, "", class: "form-control" %>
+  </div>
+  <div>
+    <%= submit_tag "Sign In", class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>
+
+<p>If you don't have a login, <%= link_to "Sign Up", sign_up_path %>

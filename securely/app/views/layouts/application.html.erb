@@ -9,6 +9,14 @@
 <body>
 
 <div class="container">
+  <p>
+    <% if current_user %>
+      Hi <%= current_user.name %>!
+      <%= link_to "Sign Out", sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign In", new_session_path %>
+    <% end %>
+</p>
 <%= yield %>
 </div>
 
