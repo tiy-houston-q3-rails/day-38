@@ -2,13 +2,17 @@ Rails.application.routes.draw do
 
   root to: "pages#public"
   get '/private' => "pages#private", as: :private
-
+  get '/quotes' => "pages#private"
 
   get '/sign_in' => "sessions#new", as: :new_session
   post '/sign_in/verify' => "sessions#verify", as: :verify
   get '/sign_up' => "sessions#register", as: :sign_up
   post '/sign_up/create' => "sessions#create_user", as: :create_user
   delete '/session' => "sessions#destroy", as: :sign_out
+
+
+  post "/api/sign_in" => "sessions#api_signin"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

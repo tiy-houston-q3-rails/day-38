@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class User < ActiveRecord::Base
 
   has_secure_password
@@ -6,5 +8,10 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :password_digest, presence: true
   validates :password, length: {minimum: 8}
+
+
+  before_validation on: :create do
+    self.api_token = SecureRandom.hex
+  end
 
 end

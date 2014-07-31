@@ -1,2 +1,5 @@
-<h1>Pages#private</h1>
-<p>Find me in app/views/pages/private.html.erb</p>
+<h1>Quotes</h1>
+
+<% @quotes.each do |quote| %>
+  <blockquote><%= quote.text %></blockquote>
+<% end %>
